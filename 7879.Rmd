@@ -17,24 +17,7 @@ install.packages("tidyselect")
 View(Casualties)
 View(Accidents)
 
-#Arranging all of the data in order
-dplyr::arrange(Accidents, desc(Police_Force))
-dplyr::arrange(Accidents, desc(Accident_Severity))
-dplyr::arrange(Accidents, desc(Number_of_Vehicles))
-dplyr::arrange(Accidents, desc(Number_of_Casualties))
-dplyr::arrange(Accidents, desc(1st_Road_Class))
-dplyr::arrange(Accidents, desc(Road_Type))
-dplyr::arrange(Accidents, desc(Speed_limit))
-dplyr::arrange(Accidents, desc(Junction_Detail))
-dplyr::arrange(Accidents, desc(Junction_Control))
-dplyr::arrange(Accidents, desc(Pedestrain_Crossing-Human_Control))
-dplyr::arrange(Accidents, desc(light_conditions))
-dplyr::arrange(Accidents, desc(light_Conditions))
-dplyr::arrange(Accidents, desc(Light_Conditions))
-dplyr::arrange(Accidents, desc(Weather_Conditions))
-dplyr::arrange(Accidents, desc(Road_Surface_Conditions))
-dplyr::arrange(Accidents, desc(Did_Police_Office_Attend_Scene_of_Accident))
-
+#Arranging all of the -
 #Finding the average / mean of the data
 dplyr::summarise(Accidents, avg = mean(Police_Force))
 dplyr::summarise(Accidents, avg = mean(Accident_Severity))
@@ -47,6 +30,9 @@ dplyr::summarise(Accidents, avg = mean(Road_Type))
 dplyr::summarise(Accidents, avg = mean(Speed_Limit))
 dplyr::summarise(Accidents, avg = mean(Speed_limit))
 dplyr::summarise(Accidents, avg = mean(Speed_limit))
+```{r}
+dplyr::summarise(Accidents, avg = mean(Speed_limit))
+```
 
 # Bar plots to show how many each one has occured
 counts <- table(Accidents$Accident_Severity)
