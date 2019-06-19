@@ -5,38 +5,57 @@ date: "6/9/2019"
 output: html_document
 ---
 
-#loading in all of the packages that will be needed for the project
-library(readr)
-library(dplyr)
-library(Select)
-library(tidyr)
-library(readr)
-install.packages("tidyselect")
+---
+title: "Markdown"
+author: "Jon Chhum"
+date: "6/12/2019"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
 
-#Load in the data sets
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+setwd("/Users/jonchhum/Desktop/Uk Accidents")
+```
+```{r}
 View(Casualties)
 View(Accidents)
+```
 
-#Arranging all of the -
-#Finding the average / mean of the data
+```{r}
+dplyr::arrange(Accidents, desc(Police_Force))
+dplyr::arrange(Accidents, desc(Accident_Severity))
+dplyr::arrange(Accidents, desc(Number_of_Vehicles))
+dplyr::arrange(Accidents, desc(Number_of_Casualties))
+dplyr::arrange(Accidents, desc(Road_Type))
+dplyr::arrange(Accidents, desc(Speed_limit))
+dplyr::arrange(Accidents, desc(Junction_Detail))
+dplyr::arrange(Accidents, desc(Junction_Control))
+dplyr::arrange(Accidents, desc(Weather_Conditions))
+dplyr::arrange(Accidents, desc(Road_Surface_Conditions))
+
+```
+
+```{r}
 dplyr::summarise(Accidents, avg = mean(Police_Force))
 dplyr::summarise(Accidents, avg = mean(Accident_Severity))
 dplyr::summarise(Accidents, avg = mean(Number_of_Vehicles))
 dplyr::summarise(Accidents, avg = mean(Number_of_Casualties))
-dplyr::summarise(Accidents, avg = mean(1st_Road_Class))
-dplyr::summarise(Accidents, avg = mean(1st_Road_Class))
-dplyr::summarise(Accidents, avg = mean(1st_Road_Number))
 dplyr::summarise(Accidents, avg = mean(Road_Type))
-dplyr::summarise(Accidents, avg = mean(Speed_Limit))
 dplyr::summarise(Accidents, avg = mean(Speed_limit))
-dplyr::summarise(Accidents, avg = mean(Speed_limit))
-```{r}
 dplyr::summarise(Accidents, avg = mean(Speed_limit))
 ```
 
-# Bar plots to show how many each one has occured
+```{r}
 counts <- table(Accidents$Accident_Severity)
 barplot(counts, main = "Accident Severity", xlab = "Severity")
 
 counts <- table(Casualties$Casualty_Severity)
 barplot(counts, main = "Casualtie Severity", xlab = "Severity")
+```
